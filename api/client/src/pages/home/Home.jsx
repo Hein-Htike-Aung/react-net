@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Featured from '../../components/featured/Featured';
 import List from '../../components/list/List';
 import Navbar from '../../components/navbar/Navbar';
+import { axiosInstance } from '../../config';
 import './home.scss';
-import axios from 'axios';
 
 const Home = ({ type }) => {
 	const [list, setList] = useState([]);
@@ -12,7 +12,7 @@ const Home = ({ type }) => {
 	useEffect(() => {
 		const getRandomLists = async () => {
 			try {
-				const res = await axios.get(
+				const res = await axiosInstance.get(
 					`http://localhost:8800/api/list${type ? '?type=' + type : ''}${
 						genre ? '&genre=' + genre : ''
 					}`,

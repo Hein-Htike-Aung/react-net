@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import './listItem.scss';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AddIcon from '@mui/icons-material/Add';
-import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
-import axios from 'axios';
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { axiosInstance } from '../../config';
+import './listItem.scss';
 
 const ListItem = ({ index, item }) => {
 	const [isHovered, setIsHovered] = useState(false);
@@ -15,7 +15,7 @@ const ListItem = ({ index, item }) => {
 	useEffect(() => {
 		const getMovie = async () => {
 			try {
-				const res = await axios.get(
+				const res = await axiosInstance.get(
 					`http://localhost:8800/api/movies/find/${item}`,
 					{
 						headers: {

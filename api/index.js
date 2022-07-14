@@ -35,7 +35,7 @@ app.use('/api/list', listRoute);
 
 app.use(errorHandler);
 
-app.listen(8800, () => {
+app.listen(process.env.PORT || 5000, () => {
 	connect();
 	console.log('Backend server is running!!!');
 });

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import './featured.scss';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import axios from 'axios';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import React, { useEffect, useState } from 'react';
+import { axiosInstance } from '../../config';
+import './featured.scss';
 
 const Featured = ({ type, setGenre }) => {
 	const [content, setContent] = useState({});
@@ -10,7 +10,7 @@ const Featured = ({ type, setGenre }) => {
 	useEffect(() => {
 		const getRandomContent = async () => {
 			try {
-				const res = await axios(
+				const res = await axiosInstance(
 					`http://localhost:8800/api/movies/random/${
 						type ? 'type=' + type : ''
 					}`,

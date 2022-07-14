@@ -1,11 +1,11 @@
-import axios from 'axios';
+import { axiosInstance } from '../config';
 import { loginFailure, loginStart, loginSuccess } from './AuthActions';
 
 export const login = async (credentials, dispatch) => {
 	dispatch(loginStart());
 
 	try {
-		const res = await axios.post(
+		const res = await axiosInstance.post(
 			'http://localhost:8800/api/auth/login',
 			credentials,
 		);

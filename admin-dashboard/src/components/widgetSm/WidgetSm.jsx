@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './widgetSm.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { axiosInstance } from '../../../../api/client/src/config';
+import './widgetSm.css';
 
 const WidgetSm = () => {
 	const [newUsers, setNewUsers] = useState([]);
@@ -9,7 +9,7 @@ const WidgetSm = () => {
 	useEffect(() => {
 		const getNewUsers = async () => {
 			try {
-				const res = await axios.get(`http://localhost:8800/api/users?new`, {
+				const res = await axiosInstance.get(`http://localhost:8800/api/users?new`, {
 					headers: {
 						authorization:
 							'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY5NDkwNCwiZXhwIjoxNjU4MTI2OTA0fQ.UXNhf4gmOf_FfoH_J8Gd49S3PQZ3gefK96CDt2rCrsQ',

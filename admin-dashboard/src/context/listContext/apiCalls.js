@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { axiosInstance } from '../../../../api/client/src/config';
 import {
 	createListFailure,
 	createListStart,
@@ -8,13 +8,13 @@ import {
 	deleteListSuccess,
 	getListsFailure,
 	getListsStart,
-	getListsSuccess,
+	getListsSuccess
 } from './ListActions';
 
 export const getLists = async (dispatch) => {
 	dispatch(getListsStart());
 	try {
-		const res = await axios.get('http://localhost:8800/api/list', {
+		const res = await axiosInstance.get('http://localhost:8800/api/list', {
 			headers: {
 				authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
 			},
@@ -29,7 +29,7 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
 	dispatch(createListStart());
 	try {
-		const res = await axios.post('http://localhost:8800/api/list', list, {
+		const res = await axiosInstance.post('http://localhost:8800/api/list', list, {
 			headers: {
 				authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
 			},
@@ -44,7 +44,7 @@ export const createList = async (list, dispatch) => {
 export const deleteList = async (id, dispatch) => {
 	dispatch(deleteListStart());
 	try {
-		await axios.delete('http://localhost:8800/api/list/' + id, {
+		await axiosInstance.delete('http://localhost:8800/api/list/' + id, {
 			headers: {
 				authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
 			},

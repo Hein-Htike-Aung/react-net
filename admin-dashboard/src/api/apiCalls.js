@@ -1,8 +1,8 @@
-import axios from 'axios';
+import { axiosInstance } from '../../../api/client/src/config';
 import {
 	loginFailure,
 	loginStart,
-	loginSuccess,
+	loginSuccess
 } from '../context/authContext/AuthActions';
 import {
 	createMovieFailure,
@@ -13,14 +13,14 @@ import {
 	deleteMovieSuccess,
 	getMoviesFailure,
 	getMoviesStart,
-	getMoviesSuccess,
+	getMoviesSuccess
 } from '../context/movieContext/MovieActions';
 
 export const login = async (credentials, dispatch) => {
 	dispatch(loginStart());
 
 	try {
-		const res = await axios.post(
+		const res = await axiosInstance.post(
 			'http://localhost:8800/api/auth/login',
 			credentials,
 		);
@@ -35,7 +35,7 @@ export const getMovies = async (dispatch) => {
 	dispatch(getMoviesStart());
 
 	try {
-		const res = await axios.get('/movies', {
+		const res = await axiosInstance.get('/movies', {
 			headers: {
 				authorization:
 					'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
@@ -52,7 +52,7 @@ export const deleteMovie = async (id, dispatch) => {
 	dispatch(deleteMovieStart());
 
 	try {
-		await axios.delete(`/movies/${id}`, {
+		await axiosInstance.delete(`/movies/${id}`, {
 			headers: {
 				authorization:
 					'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
@@ -69,7 +69,7 @@ export const createMovie = async (movie, dispatch) => {
 	dispatch(createMovieStart());
 
 	try {
-		const res = await axios.post(`/movies`, movie, {
+		const res = await axiosInstance.post(`/movies`, movie, {
 			headers: {
 				authorization:
 					'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,

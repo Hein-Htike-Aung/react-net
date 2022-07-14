@@ -1,11 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { axiosInstance } from '../../../../api/client/src/config';
 import Chart from '../../components/chart/Chart';
 import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
 import WidgetLg from '../../components/widgetLg/WidgetLg';
 import WidgetSm from '../../components/widgetSm/WidgetSm';
-import { userData } from '../../dummyData';
 import './home.css';
-import axios from 'axios';
 
 const Home = () => {
 	const MONTHS = useMemo(
@@ -31,7 +30,7 @@ const Home = () => {
 	useEffect(() => {
 		const getUsersStats = async () => {
 			try {
-				const res = await axios.get('http://localhost:8800/api/users/stats', {
+				const res = await axiosInstance.get('http://localhost:8800/api/users/stats', {
 					headers: {
 						authorization:
 							'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY5NDkwNCwiZXhwIjoxNjU4MTI2OTA0fQ.UXNhf4gmOf_FfoH_J8Gd49S3PQZ3gefK96CDt2rCrsQ',
