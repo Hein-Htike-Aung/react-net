@@ -3,8 +3,8 @@ POST http://localhost:8800/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "john",
-    "email": "john@gmail.com",
+    "username": "ningning",
+    "email": "ningning@gmail.com",
     "password": "admin"
 }
 
@@ -13,6 +13,6 @@ POST http://localhost:8800/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "john@gmail.com",
+    "email": "karina@gmail.com",
     "password": "admin"
 }

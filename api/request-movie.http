@@ -1,0 +1,53 @@
+### Create Movie
+POST http://localhost:8800/api/movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY5MjMzMSwiZXhwIjoxNjU4MTI0MzMxfQ.52Vnn-tyKbKi3OdVZIXI4k-f9ZGV4f8WiURLRxLOt50
+
+{
+    "title":"Test",
+    "desc": "test",
+    "img": "https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU7D36jL6KiLG1xI8Xg_cZK-hYQj1L8yRxbQuB0rcLCnAk8AhEK5EM83QI71bRHUm0qOYxonD88gaThgDaPu7NuUfRg.jpg?r=4ee",
+    "imgTitle": "https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU7D36jL6KiLG1xI8Xg_cZK-hYQj1L8yRxbQuB0rcLCnAk8AhEK5EM83QI71bRHUm0qOYxonD88gaThgDaPu7NuUfRg.jpg?r=4ee",
+    "imgSm": "https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU7D36jL6KiLG1xI8Xg_cZK-hYQj1L8yRxbQuB0rcLCnAk8AhEK5EM83QI71bRHUm0qOYxonD88gaThgDaPu7NuUfRg.jpg?r=4ee",
+    "trailer": "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761",
+    "video": "https://vod-progressive.akamaized.net/exp=1624452918~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2400%2F14%2F362003850%2F1486625955.mp4~hmac=d6f829e7bb83f1ee6a28047d00aa2c1083c8fe5036c8084a4adf1c3903085856/vimeo-prod-skyfire-std-us/01/2400/14/362003850/1486625955.mp4",
+    "year": "2020",
+    "limit": 18,
+    "genre": "action",
+    "isSeries": true 
+}
+
+### Update Movie
+PATCH http://localhost:8800/api/movies/62cd7e682715cae49427b28f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2Q3ZTY4MjcxNWNhZTQ5NDI3YjI4ZiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTc2ODU0NTksImV4cCI6MTY1ODExNzQ1OX0.CvlXcyhwgSq7nRJ_wvXL6h8RYGvv_txapUYUW4wws1s
+
+{
+    "username": "merry",
+    "password": "merry123"
+}
+
+### Delete Movie
+DELETE http://localhost:8800/api/movies/62ce52fa26badcfb88c4c52a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get Movie
+GET http://localhost:8800/api/movies/find/62ce617671979ab9e390f11f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTc2ODg4MzIsImV4cCI6MTY1ODEyMDgzMn0.SDyLi72z2uEhqT-bOIARi00QPkY_fUjA6ypUlAJGIhU
+
+### Get all movies
+GET http://localhost:8800/api/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get newest 10 movies
+GET http://localhost:8800/api/movies?new=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get random movie
+GET http://localhost:8800/api/movies/random
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+
+### Get random series
+GET http://localhost:8800/api/movies/random?type=series
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E

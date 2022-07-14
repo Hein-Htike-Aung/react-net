@@ -1,3 +1,5 @@
+@import '../../app.scss';
+
 .navbar {
 	color: white;
 	font-size: 14px;
@@ -7,9 +9,9 @@
 	position: fixed;
 	background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
 
-    &.scrolled {
-        background-color: var(--main-color);
-    }
+	&.scrolled {
+		background-color: var(--main-color);
+	}
 
 	.container {
 		padding: 0 50px;
@@ -25,11 +27,26 @@
 			img {
 				height: 25px;
 				margin-right: 40px;
+
+
+				@include mobile {
+					display: none;
+				}
 			}
 
 			span {
 				margin-right: 20px;
 				cursor: pointer;
+
+				@include tablet {
+					display: none;
+				}
+
+				&.navbarMainLink {
+					@include tablet {
+						display: block;
+					}
+				}
 			}
 		}
 

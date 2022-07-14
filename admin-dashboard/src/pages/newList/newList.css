@@ -5,13 +5,21 @@
 
 .addProductForm {
 	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper {
+	display: flex;
+	gap: 100px;
 }
 
 .addProductItem {
-	width: 250px;
+	width: 400px;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 10px;
+	padding: 0 !important;
 }
 
 .addProductItem > label {
@@ -37,4 +45,9 @@
 	color: white;
 	font-weight: 600;
 	cursor: pointer;
+	width: 220px;
+}
+
+.moviesSelect {
+	height: 500px;
 }

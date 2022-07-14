@@ -1,0 +1,29 @@
+### Update user
+PATCH http://localhost:8800/api/users/62cd7e682715cae49427b28f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2Q3ZTY4MjcxNWNhZTQ5NDI3YjI4ZiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTc2ODU0NTksImV4cCI6MTY1ODExNzQ1OX0.CvlXcyhwgSq7nRJ_wvXL6h8RYGvv_txapUYUW4wws1s
+
+{
+    "username": "merry",
+    "password": "merry123"
+}
+
+### Delete user
+DELETE http://localhost:8800/api/users/62ce52fa26badcfb88c4c52a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get user
+GET http://localhost:8800/api/users/find/62cd7e682715cae49427b28f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTc2ODg4MzIsImV4cCI6MTY1ODEyMDgzMn0.SDyLi72z2uEhqT-bOIARi00QPkY_fUjA6ypUlAJGIhU
+
+### Get all users
+GET http://localhost:8800/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get newest 10 users
+GET http://localhost:8800/api/users?new
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+
+### Get newest 10 users
+GET http://localhost:8800/api/users/stats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E

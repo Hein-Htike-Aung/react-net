@@ -4,9 +4,11 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ListItem from '../listItem/ListItem';
 
-const List = () => {
+const List = ({ list }) => {
 	const [slideNumber, setSlideNumber] = useState(0);
 	const [isMoved, setIsMoved] = useState(false);
+	// 230 is item width
+	const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
 
 	const listRef = useRef();
 
@@ -20,7 +22,7 @@ const List = () => {
 			// listItem(225) + margin(5) = 230px
 			listRef.current.style.transform = `translateX(${230 + distance}px)`;
 		}
-		if (direction === 'right' && slideNumber < 5) {
+		if (direction === 'right' && slideNumber < 10 - clickLimit) {
 			setSlideNumber(slideNumber + 1);
 			// listItem(225) + margin(5) = 230px
 			listRef.current.style.transform = `translateX(${-230 + distance}px)`;
@@ -33,7 +35,7 @@ const List = () => {
 
 	return (
 		<div className='list'>
-			<div className='listTitle'>Continue to watch</div>
+			<div className='listTitle'>{list.title}</div>
 			<div className='wrapper'>
 				<ArrowBackIosNewOutlinedIcon
 					className='sliderArrow left'
@@ -41,16 +43,9 @@ const List = () => {
 					style={{ display: !isMoved && 'none' }}
 				/>
 				<div className='container' ref={listRef}>
-					<ListItem index={0} />
-					<ListItem index={1} />
-					<ListItem index={2} />
-					<ListItem index={3} />
-					<ListItem index={4} />
-					<ListItem index={5} />
-					<ListItem index={6} />
-					<ListItem index={7} />
-					<ListItem index={8} />
-					<ListItem index={9} />
+					{list.content.map((item, index) => (
+						<ListItem key={index} index={index} item={item} />
+					))}
 				</div>
 				<ArrowForwardIosIcon
 					onClick={() => handleSlide('right')}

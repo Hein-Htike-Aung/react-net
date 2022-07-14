@@ -1,18 +1,19 @@
-import React from 'react';
-import './sidebar.css';
-import LineStyleIcon from '@mui/icons-material/LineStyle';
-import TimelapseIcon from '@mui/icons-material/Timelapse';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import StorefrontIcon from '@mui/icons-material/Storefront';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+import LineStyleIcon from '@mui/icons-material/LineStyle';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import PlayCircleFilledWhiteOutlinedIcon from '@mui/icons-material/PlayCircleFilledWhiteOutlined';
 import ReportIcon from '@mui/icons-material/Report';
+import TimelapseIcon from '@mui/icons-material/Timelapse';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './sidebar.css';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
 const Sidebar = () => {
 	return (
@@ -43,14 +44,17 @@ const Sidebar = () => {
 								<PermIdentityIcon className='sidebarIcon' /> Users
 							</li>
 						</Link>
-						<Link className='link' to={`/products`}>
+						<Link className='link' to={`/movies`}>
 							<li className='sidebarListItem'>
-								<StorefrontIcon className='sidebarIcon' /> Products
+								<PlayCircleFilledWhiteOutlinedIcon className='sidebarIcon' />
+								Movies
 							</li>
 						</Link>
-						<li className='sidebarListItem'>
-							<AttachMoneyIcon className='sidebarIcon' /> Transactions
-						</li>
+						<Link className='link' to={`/list`}>
+							<li className='sidebarListItem'>
+								<FormatListBulletedIcon className='sidebarIcon' /> List
+							</li>
+						</Link>
 						<li className='sidebarListItem'>
 							<BarChartIcon className='sidebarIcon' /> Resports
 						</li>

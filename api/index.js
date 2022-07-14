@@ -30,8 +30,8 @@ app.use(express.json());
 
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
-app.use('/api/users', movieRoute);
-app.use('/api/users', listRoute);
+app.use('/api/movies', movieRoute);
+app.use('/api/list', listRoute);
 
 app.use(errorHandler);
 
