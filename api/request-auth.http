@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### login
-POST http://localhost:8800/api/auth/login
+POST https://hha-netflix-api.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {

@@ -36,8 +36,8 @@ GET http://localhost:8800/api/movies/find/62ce617671979ab9e390f11f
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTc2ODg4MzIsImV4cCI6MTY1ODEyMDgzMn0.SDyLi72z2uEhqT-bOIARi00QPkY_fUjA6ypUlAJGIhU
 
 ### Get all movies
-GET http://localhost:8800/api/movies
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzY4ODkxNiwiZXhwIjoxNjU4MTIwOTE2fQ.uMchVjUwYmWprJr8WifgZFtq3nOiDvfVG9Do5rg3s0E
+GET https://hha-netflix-api.herokuapp.com/api/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyY2U1MmJjMjZiYWRjZmI4OGM0YzUyNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzgxNjY4NywiZXhwIjoxNjU4MjQ4Njg3fQ.B445CYWLaNbAsjtPo_9HiteCkRN2PZE7xq06N6fJpDY
 
 ### Get newest 10 movies
 GET http://localhost:8800/api/movies?new=true
